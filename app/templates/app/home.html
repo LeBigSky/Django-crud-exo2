@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h1>Welcome to the exo2 Student page</h1>
+<a href="{% url 'create' %}"><button>Create</button></a>
+
+
+
+<section>
+    <h3>Section 1</h3>
+    {% for i in students  %}
+        <p>{{ i.nom}}</p>
+    {% endfor %}
+</section>
+<section>
+    <h3>Section 2</h3>
+ {% for i in students  %}
+    <p style="color: 
+    {% if i.age > 24 %}
+    #be2596
+    {% elif i.age == 22 or i.age == 23 %}
+    #2596be
+    {% endif %}">
+    {{ i.nom}}</p>  
+ {% endfor %}
+</section>
+<section>
+
+</section>
+{% endblock content %}
